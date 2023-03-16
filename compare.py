@@ -184,7 +184,7 @@ if __name__ == "__main__":
         'L': 1,
         'lambda': 0.01,
         'x0': np.zeros((shape[0] * shape[1], 1)),
-        'restart': True,
+        'restart': False, #True
         'm': shape[0],
         'N': shape[0] * shape[1]
     }
@@ -208,11 +208,15 @@ if __name__ == "__main__":
     plt.plot(np.abs(ff['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'NAG')
     plt.title('Normal Scale')
     plt.ylim([0,20])
+    plt.xlabel('Iterations')
+    plt.ylabel('Error')
     plt.subplot(1,2,2)
     plt.plot(np.abs(bb['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'ISTA')
     plt.plot(np.abs(dd['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'FISTA')
     plt.plot(np.abs(ff['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'APGD')
     plt.title('Log Scale')
+    plt.xlabel('Iterations')
+    plt.ylabel('Error')
     plt.yscale("log")
     plt.legend()
     plt.suptitle("Comparison for TV Loss")
@@ -227,11 +231,15 @@ if __name__ == "__main__":
     plt.plot(np.abs(dd['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'FISTA')
     plt.plot(np.abs(ff['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'APGD')
     plt.title('Normal Scale')
+    plt.xlabel('Iterations')
+    plt.ylabel('Error')
     plt.subplot(1,2,2)
     plt.plot(np.abs(bb['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'ISTA')
     plt.plot(np.abs(dd['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'FISTA')
     plt.plot(np.abs(ff['fx'] - dd['fx'][-1])/(dd['fx'][-1]), label = 'APGD')
     plt.title('Log Scale')
+    plt.xlabel('Iterations')
+    plt.ylabel('Error')
     plt.yscale("log")
     plt.legend()
     plt.suptitle("Comparison for L1 Loss")
