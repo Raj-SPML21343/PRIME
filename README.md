@@ -10,6 +10,7 @@
     - `01. run.py`
     - `02. compare.py`
     - `03. utility.py`
+    - `04. nestrov.py`
 
 * `./samples` contains random images from the Imagenet-mini dataset (download from [Kaggle](https://www.kaggle.com/datasets/deeptrial/miniimagenet) and extract to `./data`).
 
